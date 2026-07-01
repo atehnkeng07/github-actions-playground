@@ -1,0 +1,26 @@
+name: Understanding Jobs
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  first-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Step 1
+        run: echo "Hello from the first job!"
+
+      - name: Show Date
+        run: date
+
+  second-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Step 1
+        run: echo "Hello from the second job!"
+
+      - name: Print Current Directory
+        run: pwd
