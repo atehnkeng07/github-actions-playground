@@ -1,0 +1,19 @@
+name: GitHub Context Explorer
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  explore-context:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Display GitHub Context
+        run: |
+          echo "Actor: ${{ github.actor }}"
+          echo "Repository: ${{ github.repository }}"
+          echo "Workflow: ${{ github.workflow }}"
+          echo "Event: ${{ github.event_name }}"
+          echo "Branch: ${{ github.ref }}"
+          echo "Commit SHA: ${{ github.sha }}"
