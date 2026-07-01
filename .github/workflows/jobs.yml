@@ -1,26 +1,24 @@
-name: Understanding Jobs
+name: Job Dependencies
 
 on:
   push:
   workflow_dispatch:
 
 jobs:
-  first-job:
+  testing:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Step 1
-        run: echo "Hello from the first job!"
+      - name: Pretend to Run Tests
+        run: |
+          echo "Running tests..."
+          exit 1
 
-      - name: Show Date
-        run: date
+  build:
+    needs: testing
 
-  second-job:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Step 1
-        run: echo "Hello from the second job!"
-
-      - name: Print Current Directory
-        run: pwd
+      - name: Build Project
+        run: echo "Building..."
