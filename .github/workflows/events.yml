@@ -1,0 +1,20 @@
+name: Exploring Events
+
+on:
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+jobs:
+  event-demo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Display Event Information
+        run: |
+          echo "This workflow was triggered!"
+          echo "Event: ${{ github.event_name }}"
+          echo "Branch: ${{ github.ref }}"
+          echo "Actor: ${{ github.actor }}"
