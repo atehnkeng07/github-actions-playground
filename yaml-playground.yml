@@ -1,0 +1,24 @@
+project:
+  name: RideReady app
+  language: ReactNative
+
+  settings:
+    visibility: public
+
+
+modules:
+  - name: authentication
+    description: login, signup, password reseet
+
+  - name: courses
+    description: varies across health & fitness, digital marketing, Technology
+
+  - name: payments
+    description: payment is done installmentally
+
+
+owner: 
+  name: melz
+  role: Frontend
+
+  
