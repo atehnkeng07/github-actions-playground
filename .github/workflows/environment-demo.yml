@@ -1,16 +1,30 @@
-name: Environment Variables Demo
+name: Environment Scope Demo
 
 on:
-  push:
   workflow_dispatch:
+  push:
 
 env:
-  APP_NAME: GitHub Actions Playground
+  COMPANY: GoLearnam
 
 jobs:
   demo:
     runs-on: ubuntu-latest
 
+    env:
+      TEAM: Frontend
+
     steps:
-      - name: Print Application Name
-        run: echo "$APP_NAME"
+      - name: Step 1
+        env:
+          DEVELOPER: Melz
+        run: |
+          echo "Company: $COMPANY"
+          echo "Team: $TEAM"
+          echo "Developer: $DEVELOPER"
+
+      - name: Step 2
+        run: |
+          echo "Company: $COMPANY"
+          echo "Team: $TEAM"
+          echo "Developer: $DEVELOPER"
