@@ -1,0 +1,30 @@
+name: Environment Scope Demo
+
+on:
+  workflow_dispatch:
+  push:
+
+env:
+  COMPANY: Kings Digital
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+
+    env:
+      PROJECT: Golearnam
+
+    steps:
+      - name: Step 1
+        env:
+          MODULE: Github Actions
+        run: |
+          echo "Company: $COMPANY"
+          echo "Project: $PROJECT"
+          echo "Module: $MODULE"
+
+      - name: Step 2
+        run: |
+          echo "Company: $COMPANY"
+          echo "Project: $PROJECT"
+          echo "Module: $MODULE"
