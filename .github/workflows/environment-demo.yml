@@ -1,0 +1,16 @@
+name: Environment Variables Demo
+
+on:
+  push:
+  workflow_dispatch:
+
+env:
+  APP_NAME: GitHub Actions Playground
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print Application Name
+        run: echo "$APP_NAME"
