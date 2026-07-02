@@ -1,0 +1,44 @@
+name: module5 mini challenge
+
+on: 
+  push
+
+jobs: 
+  setup:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Project setup
+        run:
+          echo "Preparing project..."
+
+ 
+  testing:
+    needs: setup
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Preparing tests
+        run:
+          echo "Running tests..."
+
+  deployment:
+    needs: testing
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Preparing deployment
+        run:
+          echo "Deploying application..."
+
+
+  documentation:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Preparing documentation
+        run: 
+          echo "Generating documentation..."
+    
+
+     

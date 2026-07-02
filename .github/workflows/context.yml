@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Display GitHub Context
         run: |
-          echo "Actor: ${{ github.actor }}"
+          echo "Deployment started by: ${{ github.actor }}"
           echo "Repository: ${{ github.repository }}"
           echo "Workflow: ${{ github.workflow }}"
           echo "Event: ${{ github.event_name }}"
