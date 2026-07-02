@@ -1,0 +1,21 @@
+name: Checkout Demo
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  explore-runner:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Show current directory BEFORE checkout
+        run: |
+          echo "=== Current Directory ==="
+          pwd
+          echo ""
+          echo "=== Files ==="
+          ls -la

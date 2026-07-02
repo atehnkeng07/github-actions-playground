@@ -1,0 +1,16 @@
+name: Marketplace Demo
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download my repository
+        uses: actions/checkout@v4
+
+      - name: Show the files in my repository
+        run: ls
