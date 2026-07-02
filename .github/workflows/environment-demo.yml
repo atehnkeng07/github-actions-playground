@@ -5,26 +5,26 @@ on:
   push:
 
 env:
-  COMPANY: GoLearnam
+  COMPANY: Kings Digital
 
 jobs:
   demo:
     runs-on: ubuntu-latest
 
     env:
-      TEAM: Frontend
+      PROJECT: Golearnam
 
     steps:
       - name: Step 1
         env:
-          DEVELOPER: Melz
+          MODULE: Github Actions
         run: |
           echo "Company: $COMPANY"
-          echo "Team: $TEAM"
-          echo "Developer: $DEVELOPER"
+          echo "Project: $PROJECT"
+          echo "Module: $MODULE"
 
       - name: Step 2
         run: |
           echo "Company: $COMPANY"
-          echo "Team: $TEAM"
-          echo "Developer: $DEVELOPER"
+          echo "Project: $PROJECT"
+          echo "Module: $MODULE"
