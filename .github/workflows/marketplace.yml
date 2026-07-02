@@ -1,4 +1,4 @@
-name: Marketplace Actions Demo
+name: Marketplace Demo
 
 on:
   workflow_dispatch:
@@ -8,18 +8,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
+      - name: Download my repository
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22
-
-      - name: Verify Node Installation
-        run: |
-          node --version
-          npm --version
-
-      - name: Show Repository Files
+      - name: Show the files in my repository
         run: ls
