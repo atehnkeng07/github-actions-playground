@@ -1,0 +1,17 @@
+name: Conditional Demo
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Always Runs
+        run: echo "Hello!"
+
+      - name: Main Branch Only
+        if: ${{ github.ref_name == 'main' }}
+        run: echo "Deploying to Production..."
