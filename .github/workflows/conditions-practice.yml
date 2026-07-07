@@ -1,0 +1,24 @@
+name: Conditional Demo
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Always Runs
+        run: echo "Welcome to GitHub Actions!"
+
+      - name: Main Branch Only
+        if: ${{ github.ref_name == 'main' }}
+        run: echo "You are on the main branch..."
+
+      - name: Push Event Only
+        if: ${{ github.event_name == 'push' }}
+        run: echo "This workflow was triggered by a push..."
+
+      - name: User name Only
+        run: echo "Hello, <your GitHub username>" ${{ github.actor }}
