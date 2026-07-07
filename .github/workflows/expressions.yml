@@ -1,0 +1,13 @@
+name: Expression Demo
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  explore:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Show Branch
+        run: echo "Current branch is ${{ github.ref_name }}"
