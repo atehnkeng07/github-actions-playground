@@ -14,11 +14,15 @@ jobs:
 
       - name: Main Branch Only
         if: ${{ github.ref_name == 'main' }}
-        run: echo "You are on the main branch..."
+        run: echo " Ready for Production 🚀"
+
+      - name: Not a Main Branch
+        if: ${{ github.ref_name != 'main' }}
+        run: echo "Development Branch 🛠️"
 
       - name: Push Event Only
         if: ${{ github.event_name == 'push' }}
         run: echo "This workflow was triggered by a push..."
 
       - name: User name Only
-        run: echo "Hello, <your GitHub username>" ${{ github.actor }}
+        run: echo "Hello, ${{ github.actor }}"
