@@ -1,13 +1,17 @@
-name: Expression Demo
+name: Conditional Demo
 
 on:
   push:
   workflow_dispatch:
 
 jobs:
-  explore:
+  demo:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Show Branch
-        run: echo "Current branch is ${{ github.ref_name }}"
+      - name: Always Runs
+        run: echo "Hello!"
+
+      - name: Main Branch Only
+        if: ${{ github.ref_name == 'main' }}
+        run: echo "Deploying to Production..."
